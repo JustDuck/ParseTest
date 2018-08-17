@@ -1,6 +1,6 @@
 --- Wallethub Git Scehma --- 
 
---- First Table --- 
+--- First Table ----
 
 CREATE TABLE IF NOT EXISTS `LogRecords` (
 logtime timestamp(3),
@@ -12,7 +12,7 @@ primary key(ip,logtime)
 );
 
 
---- Second Table --- 
+--- Second Table ---- 
 
 CREATE TABLE IF NOT EXISTS `IPLog`(
 ip varbinary(16),
@@ -20,7 +20,7 @@ reason varchar(35),primary key(ip)
 );
 
 
---- Additional Table
+--- Additional Table ----
 
 CREATE TABLE IF NOT EXISTS `wallethub` (
   `startdate` TIMESTAMP NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `wallethub` (
   `useragent` VARCHAR(255) NOT NULL
 );
 
---- Examples of the Load File --- 
+--- Examples of the Load File ---- 
 
 String load = 
 "LOAD DATA LOCAL INFILE 'X:/access.log/' REPLACE INTO TABLE `logrecords" + "`\n"
@@ -39,7 +39,7 @@ String load =
 + "`threshold` ,\n" + "`useragent`\n" + ")";
 
 
---- One ---
+--- One ----
 
 LOAD DATA LOCAL INFILE 'X:\\access.log' REPLACE INTO TABLE `LogRecords`
 FIELDS TERMINATED BY '|'
@@ -53,7 +53,7 @@ LINES TERMINATED BY '\r\n'(
 `useragent`
 );
 
---- Two ---
+--- Two ----
 
 LOAD DATA LOCAL INFILE 'X:\\access.log' REPLACE INTO TABLE `LogRecords`
 FIELDS TERMINATED BY '|'
@@ -67,7 +67,7 @@ LINES TERMINATED BY '\r\n'(
 `useragent`
 );
 
---- query 1 ---
+--- query 1 ----
 
 SELECT inet_ntoa( ip ) AS IPAddress
 FROM logrecords
@@ -78,7 +78,7 @@ GROUP BY ip
 HAVING count( * ) >=100
 LIMIT 0 , 30
 
--- Result: --
+-- Result: ----
 
 IPAddress
 192.168.77.101
@@ -91,7 +91,7 @@ FROM logrecords
 WHERE inet_ntoa( ip ) = '192.168.11.231'
 LIMIT 0 , 30
 
--- There are 209 records.--
+-- There are 209 records ----
 
 -- Result for just 3 records:
 
