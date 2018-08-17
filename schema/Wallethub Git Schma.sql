@@ -8,19 +8,21 @@ ip varbinary(16),
 request varchar(30),
 statusvalue smallint,
 useragent varchar(500),
-primary key(ip,logtime))
+primary key(ip,logtime)
 );
+
 
 --- Second Table --- 
 
 CREATE TABLE IF NOT EXISTS `IPLog`(
 ip varbinary(16),
-reason varchar(35),primary key(ip))
+reason varchar(35),primary key(ip)
 );
 
---- Addtional Table
 
-CREATE TABLE `wallethub` (
+--- Additional Table
+
+CREATE TABLE IF NOT EXISTS `wallethub` (
   `startdate` TIMESTAMP NOT NULL,
   `IP` VARCHAR(20) NOT NULL,
   `request` VARCHAR(20) NOT NULL,
@@ -28,7 +30,7 @@ CREATE TABLE `wallethub` (
   `useragent` VARCHAR(255) NOT NULL
 );
 
---- Load File --- 
+--- Examples of the Load File --- 
 
 String load = 
 "LOAD DATA LOCAL INFILE 'X:/access.log/' REPLACE INTO TABLE `logrecords" + "`\n"
@@ -36,17 +38,34 @@ String load =
 + "LINES TERMINATED BY \'\\r\\n\'(\n" + "`startDate` ,\n" + "`IP` ,\n" + "`request` ,\n"
 + "`threshold` ,\n" + "`useragent`\n" + ")";
 
+
+--- One ---
+
 LOAD DATA LOCAL INFILE 'X:\\access.log' REPLACE INTO TABLE `LogRecords`
 FIELDS TERMINATED BY '|'
 ENCLOSED BY '"'
 ESCAPED BY '\\'
 LINES TERMINATED BY '\r\n'(
-`startDate` ,
-`IP` ,
-`request` ,
-`threshold` ,
+`startDate`,
+`IP`,
+`request`,
+`threshold`,
 `useragent`
-)
+);
+
+--- Two ---
+
+LOAD DATA LOCAL INFILE 'X:\\access.log' REPLACE INTO TABLE `LogRecords`
+FIELDS TERMINATED BY '|'
+ENCLOSED BY '"'
+ESCAPED BY '\\'
+LINES TERMINATED BY '\r\n'(
+`logtime`,
+`IP`,
+`request`,
+`statusvalue`,
+`useragent`
+);
 
 --- query 1 ---
 
@@ -59,7 +78,7 @@ GROUP BY ip
 HAVING count( * ) >=100
 LIMIT 0 , 30
 
-Result:
+-- Result: --
 
 IPAddress
 192.168.77.101
