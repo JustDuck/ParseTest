@@ -1,5 +1,4 @@
-//https://github.com/JustDuck/ParseTest
-// at: X:\eclipse neon\git\ParseTest
+
 
 package com.ef;
 

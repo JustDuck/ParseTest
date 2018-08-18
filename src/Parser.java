@@ -1,6 +1,3 @@
-//https://github.com/JustDuck/ParseTest
-
-
 package com.ef;
 
 import java.io.File;

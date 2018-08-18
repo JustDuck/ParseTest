@@ -73,19 +73,19 @@ java -cp "parser.jar" com.ef.Parser --accesslog=/path/to/file --startDate=2017-0
 
 java -cp "parser.jar" com.ef.Parser X:/access.log 2017-01-01.15:00:00 daily 200
 
-4. Then it asks if you want to store the data to DataBase. If you press â€˜Yâ€™, 
+4. Then it asks if you want to store the data to DataBase. If you press ‘Y’, 
 
 You will be asked for the MYSQL URL. 
 Enter - jdbc:mysql://localhost:3306. 
 Hoping MYSQL is installed on your local machine.
 
-5. Then it asks for â€˜usernameâ€™ and â€˜passwordâ€™. 
+5. Then it asks for ‘username’ and ‘password’. 
 Enter them. Program will create the database for you and store the records. 
 You need not create the Schema.
 
-6. If you Press â€˜Nâ€™, No data is stored to the database.
+6. If you Press ‘N’, No data is stored to the database.
 
-7. All the Matching IPâ€™s are printed in both the cases.
+7. All the Matching IP’s are printed in both the cases.
 
 8.  You can also Type/Enter:
 
@@ -144,9 +144,9 @@ Note due to the fact that my version of mysql is a little old,
 
 I could not employ certain functionality like:
 
-a.  the function â€˜INET6_ATONâ€™
+a.  the function ‘INET6_ATON’
 
-b.  the function â€˜INET6_NTOAâ€™ for back conversion of the IP Address
+b.  the function ‘INET6_NTOA’ for back conversion of the IP Address
 
 What I used instead was:
 
@@ -173,4 +173,5 @@ R, or L,
 Q should be the last one.
 
 ------------------------------------------
+
 

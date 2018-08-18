@@ -67,7 +67,7 @@ LINES TERMINATED BY '\r\n'(
 `useragent`
 );
 
---- query 1 ----
+--- Query 1 ----
 
 SELECT inet_ntoa( ip ) AS IPAddress
 FROM logrecords
@@ -78,13 +78,13 @@ GROUP BY ip
 HAVING count( * ) >=100
 LIMIT 0 , 30
 
--- Result: ----
+-- Results: ----
 
 IPAddress
 192.168.77.101
 192.168.228.188
 
---- query 2 ----
+--- Query 2 ----
 
 SELECT inet_ntoa( ip ) AS IPAddress, logtime, request, statusvalue, useragent
 FROM logrecords
@@ -93,7 +93,7 @@ LIMIT 0 , 30
 
 -- There are 209 records ----
 
--- Result for just 3 records:
+-- Results for just 3 records:
 
 IPAddress 	logtime 	request 	statusvalue 	useragent
 192.168.11.231 	2017-01-01 15:00:15 	"GET / HTTP/1.1" 	200 	"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/5...

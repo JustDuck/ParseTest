@@ -1,3 +1,3 @@
 # ParseTest
-This was the work I did for Wallethub test
+This was the work I did for the WalletHub test
 
