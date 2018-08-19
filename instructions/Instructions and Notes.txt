@@ -1,4 +1,4 @@
-# Parser
+Parser
 
 The goal is to write a parser in Java that parses a web server access log file, 
 loads the log to MySQL and checks if a given IP makes more than a certain 
@@ -59,6 +59,18 @@ java -cp "parser.jar" com.ef.Parser --startDate=2017-01-01.00:00:00 --duration=d
 
 The output will have  192.168.102.136. If you open the log file, 192.168.102.136 has 500 or more requests between 2017-01-01.00:00:00 and 2017-01-01.23:59:59
 
+Deliverables
+------------
+
+1. Java program that can be run from command line
+	
+   java -cp "parser.jar" com.ef.Parser --accesslog=/path/to/file --startDate=2017-01-01.13:00:00 --duration=hourly --threshold=100 
+
+2. Source Code for the Java program
+
+3. MySQL schema used for the log data
+
+4. SQL queries for SQL test
 
 EXECUTION
 -----------------
@@ -79,15 +91,15 @@ You will be asked for the MYSQL URL.
 Enter - jdbc:mysql://localhost:3306. 
 Hoping MYSQL is installed on your local machine.
 
-5. Then it asks for ‘username’ and ‘password’. 
-Enter them. Program will create the database for you and store the records. 
+5. Then it asks for 'username' and 'password. 
+Enter them. The program will create the database for you and store the records. 
 You need not create the Schema.
 
-6. If you Press ‘N’, No data is stored to the database.
+6. If you Press 'N', No data is stored to the database.
 
 7. All the Matching IP’s are printed in both the cases.
 
-8.  You can also Type/Enter:
+8. You can also Type/Enter:
 
 'R' or 'L' or 'Q'
 
@@ -100,7 +112,7 @@ You need not create the Schema.
 ADDITIONAL NOTES
 -----------------
 
-a.  Start mysql via: net start MySQL.
+a.  Start Mysql via: net start MySQL.
 
 or if you are using XAMMP point to location e.g.  E:\Program Files\xampp\mysql\bin>mysql -u root
 
@@ -132,7 +144,7 @@ For this project I used the following:
 
 	phpMyAdmin 3.2.4
 
-If you are going to play around with the source I incourage you to 
+If you are going to play around with the source I encourage you to 
 
 make sure that you place the two critical jars files at:
 
@@ -158,7 +170,7 @@ I suggest using this:
 
 java -cp "parser.jar" com.ef.Parser X:/access.log 2017-01-01.15:00:00 daily 200
 
-Now that depends on if you place the log file e.g. at X:/access.log
+That does depend on if you place the log file e.g. at X:/access.log
 
 The log file is fairly large and contains 116484 log records in it.
 
@@ -172,6 +184,10 @@ R, or L,
 
 Q should be the last one.
 
-------------------------------------------
+------------------------
+
+These are the Instructions for the WalletHub Test
+
+------------------------
 
 

@@ -1,3 +1,4 @@
+//This is some of the work performed for the WalletHub Test
 package com.ef;
 
 import java.io.File;
@@ -612,7 +613,7 @@ public class Parser {
 				System.out.println("\n");
 				System.out.println("Enter Password");
 				password = s.nextLine().trim();
-				// setPassword(s.nextLine().trim());
+				
 
 				readDatafromFile(execParameters);
 				db = new LogDAO(URL, username, "");

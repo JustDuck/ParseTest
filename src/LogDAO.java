@@ -1,5 +1,4 @@
-
-
+//This is some of the work performed for the WalletHub Test
 package com.ef;
 
 import java.sql.Connection;
